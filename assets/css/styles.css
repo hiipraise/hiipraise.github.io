@@ -1020,11 +1020,7 @@ body::before {
   aspect-ratio: 16/9;
   display: block;
 }
-audio {
-  width: 100%;
-  margin-top: 0.75rem;
-  accent-color: var(--accent);
-}
+
 
 /*  FOOTER  */
 .footer {
