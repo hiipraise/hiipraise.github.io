@@ -1021,7 +1021,6 @@ body::before {
   display: block;
 }
 
-
 /*  FOOTER  */
 .footer {
   background: var(--bg-surface);
@@ -1042,8 +1041,6 @@ body::before {
   bottom: 2rem;
   right: 2rem;
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--success);
   border-radius: var(--radius-md);
   padding: 1rem 1.5rem;
   font-size: 0.875rem;
