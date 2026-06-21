@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Obi Praise Chinedu</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .project-full-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      transition: var(--transition);
+    }
+
+    .project-full-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .project-full-card:nth-child(even) {
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    .project-full-card:nth-child(even) .proj-visual {
+      order: 2;
+    }
+
+    .project-full-card:nth-child(even) .proj-content {
+      order: 1;
+    }
+
+    .proj-visual {
+      background: linear-gradient(135deg, var(--bg-surface) 0%, #1E2A40 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-glow) 0%, transparent 60%);
+    }
+
+    .proj-visual [data-lucide] {
+      position: relative;
+      z-index: 1;
+      width: 64px;
+      height: 64px;
+      stroke: var(--accent-light);
+      stroke-width: 1.25;
+    }
+
+    .proj-content {
+      padding: 2rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .proj-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      opacity: 0.7;
+    }
+
+    .proj-content h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .proj-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .proj-content ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .proj-content li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding: 0.3rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .proj-content li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-size: 0.75rem;
+    }
+
+    .proj-links-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+
+      .project-full-card,
+      .project-full-card:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .project-full-card:nth-child(even) .proj-visual {
+        order: 1;
+      }
+
+      .project-full-card:nth-child(even) .proj-content {
+        order: 2;
+      }
+
+      .proj-visual {
+        min-height: 160px;
+      }
+
+      .proj-content {
+        padding: 1.5rem;
+      }
+
+      .proj-content h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Obi<span>Praise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="section" style="padding-top:3rem;" aria-labelledby="projects-heading">
+      <div class="container">
+
+        <div class="reveal" style="margin-bottom:3.5rem;">
+          <div class="section-tag">My Work</div>
+          <h1 class="section-title" id="projects-heading">Projects</h1>
+          <p class="section-desc">
+            Three featured builds - each representing a distinct challenge: web fundamentals,
+            full-stack AI infrastructure, and production-grade frontend engineering.
+          </p>
+        </div>
+
+        <!-- PCL Clone -->
+        <article class="project-full-card reveal" aria-label="PCL Construction Clone">
+          <div class="proj-visual"><i data-lucide="building-2"></i></div>
+          <div class="proj-content">
+            <div class="proj-number">PROJECT 01 · REACT / JS</div>
+            <h2>PCL Construction Clone</h2>
+            <p>A faithful recreation of the PCL Construction corporate homepage, built from scratch using pure React,
+              and
+              vanilla JavaScript. Demonstrates mastery of web fundamentals without any framework.</p>
+            <ul>
+              <li>Responsive multi-column layout with TailwindCSS</li>
+              <li>Sticky navigation with scroll-triggered behavior</li>
+              <li>Animated hero and section transitions</li>
+              <li>Cross-browser compatible CSS with custom properties</li>
+            </ul>
+            <div class="project-tags" style="margin-bottom:1.25rem;">
+              <span class="tag">REACT</span><span class="tag">JavaScript</span><span class="tag">Responsive</span>
+            </div>
+            <div class="proj-links-row">
+              <a href="https://github.com/hiipraise" class="btn btn-secondary" target="_blank" rel="noopener">
+                <i data-lucide="github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AXIOM -->
+        <article class="project-full-card reveal" aria-label="AXIOM career platform">
+          <div class="proj-visual"><i data-lucide="zap"></i></div>
+          <div class="proj-content">
+            <div class="proj-number">PROJECT 02 · FULL-STACK AI SAAS</div>
+            <h2>AXIOM - AI Career Platform</h2>
+            <p>A production-grade, AI-powered career workspace with a React/TypeScript + Vite frontend and a
+              FastAPI/Python + MongoDB backend. Integrates Groq-hosted LLaMA models for CV scoring, job matching, and
+              interview prep.</p>
+            <ul>
+              <li>AI CV editor with ATS section detection and scoring</li>
+              <li>Job board with Africa/Nigeria filtering and one-click apply</li>
+              <li>Interview prep with STAR framework and AI feedback</li>
+              <li>Dashboard with application metrics and analytics</li>
+              <li>JWT auth, rate limiting, audit logging, and secure API design</li>
+              <li>Fully responsive - mobile-first with bottom sheet patterns</li>
+            </ul>
+            <div class="project-tags" style="margin-bottom:1.25rem;">
+              <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span>
+              <span class="tag">Python</span><span class="tag">MongoDB</span><span class="tag">Groq</span>
+            </div>
+            <div class="proj-links-row">
+              <a href="https://axiomcv.site" class="btn btn-primary" target="_blank" rel="noopener">
+                <i data-lucide="external-link"></i> Live Site
+              </a>
+              <a href="https://github.com/hiipraise" class="btn btn-secondary" target="_blank" rel="noopener">
+                <i data-lucide="github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pinnacle Aerospace -->
+        <article class="project-full-card reveal" aria-label="Pinnacle Aerospace">
+          <div class="proj-visual"><i data-lucide="rocket"></i></div>
+          <div class="proj-content">
+            <div class="proj-number">PROJECT 03 · NEXT.JS · MOTION</div>
+            <h2>Pinnacle Aerospace</h2>
+            <p>A production-ready aerospace corporate website built with Next.js 15 app router, TailwindCSS, and Framer
+              Motion. Features fluid scroll animations, orchestrated entrance sequences, and premium visual language.
+            </p>
+            <ul>
+              <li>Next.js 15 App Router with TypeScript and server components</li>
+              <li>Framer Motion scroll-triggered animations and exit transitions</li>
+              <li>TailwindCSS design system with custom tokens</li>
+              <li>Performance-optimized images and lazy-loaded sections</li>
+              <li>Fully responsive with mobile-first breakpoints</li>
+              <li>SEO-ready metadata and semantic HTML structure</li>
+            </ul>
+            <div class="project-tags" style="margin-bottom:1.25rem;">
+              <span class="tag">Next.js 15</span><span class="tag">TypeScript</span>
+              <span class="tag">TailwindCSS</span><span class="tag">Framer Motion</span>
+            </div>
+            <div class="proj-links-row">
+              <a href="https://github.com/hiipraise" class="btn btn-secondary" target="_blank" rel="noopener">
+                <i data-lucide="github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- More projects -->
+        <div class="reveal" style="margin-top:3rem;">
+          <div class="section-tag">More Work</div>
+          <h2 class="section-title" style="font-size:1.5rem;margin-bottom:2rem;">Other Notable Builds</h2>
+          <div class="projects-grid">
+
+            <article class="project-card" aria-label="Sentinel project">
+              <div class="project-img-placeholder"><i data-lucide="shield"></i></div>
+              <div class="project-body">
+                <h3 class="project-name">Sentinel</h3>
+                <p class="project-desc">Enterprise-grade Emergency Response Mapping Dashboard - real-time crisis
+                  coordination with Zustand, Recharts analytics, and Lenis smooth scroll.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Zustand</span><span class="tag">Recharts</span><span
+                    class="tag">TailwindCSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                    <i data-lucide="github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" aria-label="AutoDoc AI project">
+              <div class="project-img-placeholder"><i data-lucide="file-text"></i></div>
+              <div class="project-body">
+                <h3 class="project-name">AutoDoc AI (Open Source)</h3>
+                <p class="project-desc">A CLI toolkit for generating and auto-updating project README files. Built with
+                  Python, TypeScript, and Node - a developer productivity tool used by the open-source community.</p>
+                <div class="project-tags">
+                  <span class="tag">Python</span><span class="tag">TypeScript</span><span
+                    class="tag">Node.js</span><span class="tag">CLI</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                    <i data-lucide="github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" aria-label="Simulyn project">
+              <div class="project-img-placeholder"><i data-lucide="bot"></i></div>
+              <div class="project-body">
+                <h3 class="project-name">Simulyn</h3>
+                <p class="project-desc">A futuristic AI workspace operating system for career simulation and
+                  professional training - built with Lenis, Zustand, React, and TailwindCSS.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Lenis</span><span class="tag">Zustand</span><span
+                    class="tag">TailwindCSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                    <i data-lucide="github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Obi Praise Chinedu · <a href="mailto:info.praisechinedu@gmail.com">info.praisechinedu@gmail.com</a> · <a
+          href="https://github.com/hiipraise" target="_blank" rel="noopener">github.com/hiipraise</a></p>
+      <p style="margin-top:0.4rem;font-size:0.75rem;">COS 106 - Introduction to Web Technologies · Miva Open University
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

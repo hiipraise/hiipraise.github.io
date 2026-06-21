@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Obi Praise Chinedu</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Obi<span>Praise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="section" style="padding-top:3rem;" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="reveal" style="margin-bottom:3rem;">
+          <div class="section-tag">Contact</div>
+          <h1 class="section-title" id="contact-heading">Let's Build Something.</h1>
+          <p class="section-desc">
+            Open to internships, freelance projects, collaborations, or just a good
+            conversation about software, product, and design.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+
+          <!-- LEFT: Info -->
+          <aside class="reveal" aria-label="Contact information">
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i data-lucide="mail"></i></div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-value">
+                  <a href="mailto:info.praisechinedu@gmail.com">info.praisechinedu@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i data-lucide="github"></i></div>
+              <div>
+                <div class="contact-info-label">GitHub</div>
+                <div class="contact-info-value">
+                  <a href="https://github.com/hiipraise" target="_blank" rel="noopener">github.com/hiipraise</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i data-lucide="globe"></i></div>
+              <div>
+                <div class="contact-info-label">Portfolio</div>
+                <div class="contact-info-value">
+                  <a href="https://hiipraise.vercel.app" target="_blank" rel="noopener">hiipraise.vercel.app</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i data-lucide="zap"></i></div>
+              <div>
+                <div class="contact-info-label">AXIOM - Live Product</div>
+                <div class="contact-info-value">
+                  <a href="https://axiomcv.site" target="_blank" rel="noopener">axiomcv.site</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+              <div>
+                <div class="contact-info-label">Location</div>
+                <div class="contact-info-value">Lagos, Nigeria · Open to Remote</div>
+              </div>
+            </div>
+
+            <!-- Availability badge -->
+            <div
+              style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:var(--radius-md);padding:1rem 1.25rem;margin-top:0.5rem;">
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
+                <span
+                  style="width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block;animation:pulse 2s infinite;flex-shrink:0;"></span>
+                <span style="font-size:0.82rem;font-weight:600;color:var(--success);">Available for opportunities</span>
+              </div>
+              <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.5;">
+                Open to internships, freelance contracts, and part-time roles.
+                Response within 24 hours.
+              </p>
+            </div>
+
+          </aside>
+
+          <!-- RIGHT: Form -->
+          <div class="reveal">
+            <div class="contact-form-card">
+              <h2>Send a Message</h2>
+
+              <!-- Form body -->
+              <div id="form-body">
+                <form id="contact-form" action="https://formspree.io/f/mqadgngy" method="POST" novalidate
+                  aria-label="Contact form">
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="c-name">Full Name *</label>
+                      <input type="text" id="c-name" name="name" class="form-input" placeholder="Your name"
+                        autocomplete="name" aria-required="true" />
+                      <div class="form-error" id="err-name" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="c-email">Email Address *</label>
+                      <input type="email" id="c-email" name="email" class="form-input" placeholder="you@example.com"
+                        autocomplete="email" aria-required="true" />
+                      <div class="form-error" id="err-email" role="alert"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="c-phone">Phone Number</label>
+                      <input type="tel" id="c-phone" name="phone" class="form-input"
+                        placeholder="Digits only (optional)" autocomplete="tel" />
+                      <div class="form-error" id="err-phone" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="c-subject">Subject *</label>
+                      <input type="text" id="c-subject" name="subject" class="form-input"
+                        placeholder="e.g. Internship Opportunity" aria-required="true" />
+                      <div class="form-error" id="err-subject" role="alert"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="c-message">Message *</label>
+                    <textarea id="c-message" name="message" class="form-textarea" rows="5"
+                      placeholder="Tell me what you have in mind..." aria-required="true"></textarea>
+                    <div class="form-error" id="err-message" role="alert"></div>
+                  </div>
+
+                  <!-- Formspree honeypot - spam prevention -->
+                  <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off" />
+
+                  <button type="submit" id="submit-btn" class="btn btn-primary"
+                    style="width:100%;justify-content:center;padding:0.875rem;">
+                    <span class="btn-spinner" id="btn-spinner"></span>
+                    <i data-lucide="send" id="send-icon"></i>
+                    <span id="btn-text">Send Message</span>
+                  </button>
+
+                  <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;">
+                    * Required fields. Powered by <a href="https://formspree.io" target="_blank" rel="noopener"
+                      style="color:var(--accent-light);">Formspree</a>.
+                  </p>
+
+                </form>
+              </div>
+
+              <!-- Success state - shown by JS after successful POST -->
+              <div class="form-success" id="form-success" role="status" aria-live="polite">
+                <div class="success-icon">
+                  <i data-lucide="check-circle"></i>
+                </div>
+                <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;margin-bottom:0.5rem;">
+                  Message Sent!
+                </h3>
+                <p>Thanks for reaching out - I'll get back to you within 24 hours.</p>
+                <button class="btn btn-secondary" style="margin-top:1.5rem;" onclick="
+                    document.getElementById('form-body').style.display='block';
+                    document.getElementById('form-success').style.display='none';
+                    document.getElementById('contact-form').reset();
+                    lucide.createIcons();
+                  ">
+                  <i data-lucide="rotate-ccw"></i> Send Another Message
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Obi Praise Chinedu · <a href="mailto:info.praisechinedu@gmail.com">info.praisechinedu@gmail.com</a> · <a
+          href="https://github.com/hiipraise" target="_blank" rel="noopener">github.com/hiipraise</a></p>
+      <p style="margin-top:0.4rem;font-size:0.75rem;">COS 106 - Introduction to Web Technologies · Miva Open University
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

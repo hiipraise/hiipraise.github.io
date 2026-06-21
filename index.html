@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obi Praise Chinedu - Portfolio</title>
+  <meta name="description"
+    content="Full-Stack Product Engineer & UI/UX Designer - Software Engineering student at Miva Open University." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Obi<span>Praise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-glow"></div>
+      <div class="container hero-inner">
+
+        <h1 class="hero-name">
+          Obi Praise<br><span class="accent">Chinedu.</span>
+        </h1>
+
+        <div class="hero-terminal" aria-live="polite">
+          ₦ <span class="typed-text" id="typed-role"></span><span class="cursor" aria-hidden="true"></span>
+        </div>
+
+        <p class="hero-bio">
+          Software Engineering student building production-grade applications -
+          from AI-powered career platforms to aerospace corporate sites.
+          I care deeply about craft: clean code, thoughtful UX, and systems that work.
+        </p>
+
+        <div class="hero-cta">
+          <a href="projects.html" class="btn btn-primary">
+            <i data-lucide="layers"></i> View Projects
+          </a>
+          <a href="contact.html" class="btn btn-secondary">
+            <i data-lucide="mail"></i> Get In Touch
+          </a>
+          <a href="assets/docs/Obi_Praise_Chinedu-FULL-STACK_PRODUCT_ENGINEER_WITH_A_STRONG_EMPHASIS_ON_FRONTEND_DESIGN_AND_UX.pdf"
+            class="btn btn-secondary" download aria-label="Download CV PDF">
+            <i data-lucide="download"></i> Download CV
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">3<span>+</span></span>
+            <span class="stat-label">Years building</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">10<span>+</span></span>
+            <span class="stat-label">Projects shipped</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Internships</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Live SaaS product</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">Tech Stack</div>
+          <h2 class="section-title" id="skills-heading">What I Build With</h2>
+          <p class="section-desc">
+            A curated set of tools I reach for when crafting frontend experiences,
+            full-stack services, and AI-integrated products.
+          </p>
+        </div>
+        <div class="skills-grid reveal">
+          <span class="skill-chip">React</span><span class="skill-chip">TypeScript</span>
+          <span class="skill-chip">Next.js</span><span class="skill-chip">Python</span>
+          <span class="skill-chip">FastAPI</span><span class="skill-chip">Node.js</span>
+          <span class="skill-chip">MongoDB</span><span class="skill-chip">TailwindCSS</span>
+          <span class="skill-chip">Docker</span><span class="skill-chip">Redis</span>
+          <span class="skill-chip">Framer Motion</span><span class="skill-chip">Groq / LLaMA</span>
+          <span class="skill-chip">PostgreSQL</span><span class="skill-chip">CI/CD</span>
+          <span class="skill-chip">React Native</span><span class="skill-chip">HTML & CSS</span>
+          <span class="skill-chip">JavaScript</span><span class="skill-chip">Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="section" aria-labelledby="featured-heading" style="padding-top:0;">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">Selected Work</div>
+          <h2 class="section-title" id="featured-heading">Featured Projects</h2>
+          <p class="section-desc">A handful of things I've built and shipped.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal" aria-label="AXIOM project">
+            <div class="project-img-placeholder">
+              <i data-lucide="zap"></i>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">AXIOM</h3>
+              <p class="project-desc">
+                Full-stack AI-powered career workspace - CV editor, ATS scorer, job board,
+                and interview prep. Built with React, FastAPI & Groq LLaMA.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span><span class="tag">TypeScript</span>
+                <span class="tag">Python</span><span class="tag">MongoDB</span><span class="tag">Groq</span>
+              </div>
+              <div class="project-links">
+                <a href="https://axiomcv.site" class="project-link" target="_blank" rel="noopener">
+                  <i data-lucide="external-link"></i> Live Site
+                </a>
+                <a href="projects.html" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" aria-label="PCL Clone project">
+            <div class="project-img-placeholder">
+              <i data-lucide="building-2"></i>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">PCL Construction Clone</h3>
+              <p class="project-desc">
+                Faithful recreation of the PCL Construction corporate homepage,
+                demonstrating clean HTML semantics and JavaScript interactivity.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="projects.html" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" aria-label="Pinnacle Aerospace project">
+            <div class="project-img-placeholder">
+              <i data-lucide="rocket"></i>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">Pinnacle Aerospace</h3>
+              <p class="project-desc">
+                Production-ready aerospace corporate site with fluid scroll animations,
+                Next.js 15 app router, and Framer Motion sequences.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Next.js 15</span><span class="tag">TailwindCSS</span>
+                <span class="tag">Framer Motion</span><span class="tag">TypeScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="projects.html" class="project-link">Details →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+          <a href="projects.html" class="btn btn-secondary">View All Projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MULTIMEDIA -->
+    <section class="section" style="padding-top:0;">
+      <div class="container reveal">
+        <div class="media-section">
+          <div class="media-section-header">
+            <i data-lucide="video"></i> Watch: What I'm Building
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
+            A short overview of AXIOM - the AI career platform I built from scratch.
+          </p>
+          <iframe class="media-embed" src="https://youtu.be/DjWscu1cKuQ" title="AXIOM Career Platform Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
+
+          <p
+            style="font-size:0.78rem;color:var(--text-muted);margin-top:1.25rem;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.4rem;">
+            <i data-lucide="music" style="width:13px;height:13px;stroke:var(--text-muted);"></i>
+            Background ambiance while you browse:
+          </p>
+          <audio controls preload="none" aria-label="Background music player">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>
+        © 2025 Obi Praise Chinedu ·
+        <a href="mailto:info.praisechinedu@gmail.com">info.praisechinedu@gmail.com</a> ·
+        <a href="https://github.com/hiipraise" target="_blank" rel="noopener">github.com/hiipraise</a>
+      </p>
+      <p style="margin-top:0.4rem;font-size:0.75rem;">COS 106 - Introduction to Web Technologies · Miva Open University
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

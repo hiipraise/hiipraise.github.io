@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Planner - Obi Praise Chinedu</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Obi<span>Praise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html" class="active">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="section" style="padding-top:3rem;" aria-labelledby="planner-heading">
+      <div class="container">
+
+        <div class="reveal" style="margin-bottom:2.5rem;">
+          <div class="section-tag">Academic Planner</div>
+          <h1 class="section-title" id="planner-heading">Stay On Track</h1>
+          <p class="section-desc" style="margin-bottom:0;">
+            An interactive task manager for tracking academic work, deadlines, and coursework.
+            Tasks persist in your browser across sessions.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="planner-stats reveal">
+          <div class="planner-stat">
+            <span class="planner-stat-num" id="stat-total">0</span>
+            <span class="planner-stat-label">Total Tasks</span>
+          </div>
+          <div class="planner-stat" style="border-color:rgba(16,185,129,0.25);">
+            <span class="planner-stat-num" id="stat-done" style="color:var(--success);">0</span>
+            <span class="planner-stat-label">Completed</span>
+          </div>
+          <div class="planner-stat" style="border-color:rgba(245,158,11,0.25);">
+            <span class="planner-stat-num" id="stat-pending" style="color:var(--warning);">0</span>
+            <span class="planner-stat-label">Pending</span>
+          </div>
+        </div>
+
+        <div class="planner-layout">
+
+          <!-- ADD TASK FORM -->
+          <aside aria-label="Add new task">
+            <div class="planner-form-card">
+              <h2>
+                <i data-lucide="plus-circle"></i> New Task
+              </h2>
+
+              <form id="task-form" novalidate aria-label="Add task form">
+
+                <div class="form-group">
+                  <label class="form-label" for="task-input">Task Title *</label>
+                  <input type="text" id="task-input" class="form-input"
+                    placeholder="e.g. Submit COS 106 assignment"
+                    autocomplete="off" aria-required="true" />
+                  <div class="form-error" id="task-err" role="alert">Task title cannot be empty.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="task-subject">Course / Subject *</label>
+                  <input type="text" id="task-subject" class="form-input"
+                    placeholder="e.g. COS 106"
+                    autocomplete="off" aria-required="true" />
+                  <div class="form-error" id="subject-err" role="alert">Subject cannot be empty.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="task-due">Due Date</label>
+                  <input type="date" id="task-due" class="form-input" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="task-priority">Priority</label>
+                  <select id="task-priority" class="form-select" aria-label="Task priority level">
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                    <option value="low">Low</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="task-note">Notes (optional)</label>
+                  <textarea id="task-note" class="form-textarea"
+                    placeholder="Any additional context..." rows="3"
+                    aria-label="Task notes"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                  <i data-lucide="plus"></i> Add Task
+                </button>
+
+              </form>
+            </div>
+          </aside>
+
+          <!-- TASK LIST -->
+          <div class="tasks-panel">
+            <div class="tasks-header">
+              <h2>My Tasks</h2>
+              <div class="tasks-filters" role="group" aria-label="Filter tasks">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Done</button>
+              </div>
+            </div>
+
+            <div id="task-list" role="list" aria-label="Task list" aria-live="polite">
+              <!-- Injected by script.js -->
+            </div>
+
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;">
+              <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;display:flex;align-items:flex-start;gap:0.5rem;">
+                <i data-lucide="lightbulb" style="width:14px;height:14px;stroke:var(--accent-light);flex-shrink:0;margin-top:2px;"></i>
+                <span><strong style="color:var(--text-secondary);">Tip:</strong> Click the checkbox to mark a task complete. Tasks auto-save in your browser. Use filters to focus on what needs attention.</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Obi Praise Chinedu · <a href="mailto:info.praisechinedu@gmail.com">info.praisechinedu@gmail.com</a> · <a href="https://github.com/hiipraise" target="_blank" rel="noopener">github.com/hiipraise</a></p>
+      <p style="margin-top:0.4rem;font-size:0.75rem;">COS 106 - Introduction to Web Technologies · Miva Open University</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
