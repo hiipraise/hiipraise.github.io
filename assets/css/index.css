@@ -1,0 +1,31 @@
+.hero-profile-wrap {
+  margin-bottom: 1.5rem;
+  animation: fadeSlideUp 0.6s ease both;
+}
+
+.hero-profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-accent);
+  box-shadow:
+    0 0 32px var(--accent-glow),
+    0 8px 24px rgba(0, 0, 0, 0.4);
+  display: block;
+  transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+  .hero-profile-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-profile-img {
+    width: 88px;
+    height: 88px;
+  }
+}
