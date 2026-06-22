@@ -266,7 +266,7 @@
   updateStats();
 })();
 
-//  CONTACT FORM - Formspree AJAX
+//  CONTACT FORM
 (function initContact() {
   const form = document.getElementById("contact-form");
   if (!form) return;

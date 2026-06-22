@@ -424,6 +424,14 @@ body::before {
   stroke: var(--accent-light);
   stroke-width: 1.5;
 }
+.project-img-placeholder img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .project-body {
   padding: 1.5rem;
   flex: 1;
@@ -504,6 +512,13 @@ body::before {
   height: 80px;
   stroke: var(--accent-light);
   stroke-width: 1;
+}
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
 }
 
 .about-contact-list {
