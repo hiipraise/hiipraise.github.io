@@ -334,7 +334,7 @@ body::before {
   gap: 0.5rem;
 }
 .section-tag::before {
-  content: "//";
+  content: "₦";
   opacity: 0.5;
 }
 .section-title {
