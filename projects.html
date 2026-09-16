@@ -6,6 +6,7 @@
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects - Obi Praise Chinedu</title>
+  <meta name="description" content="Web and mobile applications built with React, Next.js, TypeScript, and Python. Featured projects include AXIOM, Primer, Soro, and more." />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/projects.css" />
 </head>
@@ -14,12 +15,11 @@
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Obi<span>Praise</span></a>
+      <a href="mailto:info.praisechinedu@gmail.com" class="nav-logo" style="display:inline-flex;align-items:center;gap:0.4rem;"><i data-lucide="mail" style="width:16px;height:16px;stroke:var(--accent-light);animation:buzz 2s ease infinite;"></i> info.praisechinedu@gmail.com</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="planner.html">Planner</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -36,8 +36,8 @@
           <div class="section-tag">My Work</div>
           <h1 class="section-title" id="projects-heading">Projects</h1>
           <p class="section-desc">
-            Three featured builds - each representing a distinct challenge: web fundamentals,
-            full-stack AI infrastructure, and production-grade frontend engineering.
+            Web and mobile applications built across personal projects, development gigs,
+            internships, and collaborative work — spanning e-commerce, fintech, aerospace, and more.
           </p>
         </div>
 
@@ -140,15 +140,31 @@
           <h2 class="section-title" style="font-size:1.5rem;margin-bottom:2rem;">Other Notable Builds</h2>
           <div class="projects-grid">
 
-            <article class="project-card" aria-label="Sentinel project">
-              <div class="project-img-placeholder"><i data-lucide="shield"></i></div>
+            <article class="project-card" aria-label="Primer project">
+              <div class="project-img-placeholder"><i data-lucide="lightbulb"></i></div>
               <div class="project-body">
-                <h3 class="project-name">Sentinel</h3>
-                <p class="project-desc">Enterprise-grade Emergency Response Mapping Dashboard - real-time crisis
-                  coordination with Zustand, Recharts analytics, and Lenis smooth scroll.</p>
+                <h3 class="project-name">Primer</h3>
+                <p class="project-desc">Product that turns raw ideas into execution-ready blueprints.
+                  Built the interface for structuring ideas into organized plans, requirements, and execution steps.</p>
                 <div class="project-tags">
-                  <span class="tag">React</span><span class="tag">Zustand</span><span class="tag">Recharts</span><span
-                    class="tag">TailwindCSS</span>
+                  <span class="tag">Next.js</span><span class="tag">Supabase</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                    <i data-lucide="github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" aria-label="Soro project">
+              <div class="project-img-placeholder"><i data-lucide="heart"></i></div>
+              <div class="project-body">
+                <h3 class="project-name">Soro</h3>
+                <p class="project-desc">Private, anonymous platform for emotional processing, progress
+                  tracking, and financial planning. Built the frontend and core user interfaces and delivered the PWA experience.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Python</span><span class="tag">PWA</span>
                 </div>
                 <div class="project-links">
                   <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
@@ -161,12 +177,46 @@
             <article class="project-card" aria-label="AutoDoc AI project">
               <div class="project-img-placeholder"><i data-lucide="file-text"></i></div>
               <div class="project-body">
-                <h3 class="project-name">AutoDoc AI (Open Source)</h3>
-                <p class="project-desc">A CLI toolkit for generating and auto-updating project README files. Built with
-                  Python, TypeScript, and Node - a developer productivity tool used by the open-source community.</p>
+                <h3 class="project-name">AutoDoc AI</h3>
+                <p class="project-desc">Developer tool that automatically documents codebases.
+                  Built tooling and workflows for analyzing codebases and generating technical documentation.</p>
                 <div class="project-tags">
-                  <span class="tag">Python</span><span class="tag">TypeScript</span><span
-                    class="tag">Node.js</span><span class="tag">CLI</span>
+                  <span class="tag">CLI</span><span class="tag">AI</span><span class="tag">TypeScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                    <i data-lucide="github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" aria-label="Wellbeing project">
+              <div class="project-img-placeholder"><i data-lucide="leaf"></i></div>
+              <div class="project-body">
+                <h3 class="project-name">Wellbeing</h3>
+                <p class="project-desc">Marketing website for a cleaning, fumigation, and weed-control business.
+                  Built service-focused pages with calls to action across desktop and mobile.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
+                    <i data-lucide="github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" aria-label="Sentinel project">
+              <div class="project-img-placeholder"><i data-lucide="shield"></i></div>
+              <div class="project-body">
+                <h3 class="project-name">Sentinel</h3>
+                <p class="project-desc">Enterprise-grade Emergency Response Mapping Dashboard - real-time crisis
+                  coordination with Zustand, Recharts analytics, and Lenis smooth scroll.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span><span class="tag">Zustand</span><span class="tag">Recharts</span><span
+                    class="tag">TailwindCSS</span>
                 </div>
                 <div class="project-links">
                   <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">

@@ -51,39 +51,7 @@
   els.forEach((el) => observer.observe(el));
 })();
 
-//  TYPED HERO
-(function initTyped() {
-  const el = document.getElementById("typed-role");
-  if (!el) return;
-  const phrases = [
-    "Full-Stack Product Engineer",
-    "UI/UX Designer",
-    "React / TypeScript Dev",
-    "Open Source Builder",
-  ];
-  let phraseIdx = 0,
-    charIdx = 0,
-    deleting = false;
-
-  function tick() {
-    const phrase = phrases[phraseIdx];
-    el.textContent = deleting
-      ? phrase.slice(0, charIdx--)
-      : phrase.slice(0, charIdx++);
-    let delay = deleting ? 45 : 80;
-    if (!deleting && charIdx > phrase.length) {
-      delay = 1800;
-      deleting = true;
-    } else if (deleting && charIdx < 0) {
-      deleting = false;
-      phraseIdx = (phraseIdx + 1) % phrases.length;
-      charIdx = 0;
-      delay = 300;
-    }
-    setTimeout(tick, delay);
-  }
-  tick();
-})();
+//  TYPED HERO — removed (static subtitle used instead)
 
 //  ACADEMIC PLANNER
 (function initPlanner() {

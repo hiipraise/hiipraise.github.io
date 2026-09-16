@@ -1,31 +1,29 @@
-.hero-profile-wrap {
-  margin-bottom: 1.5rem;
-  animation: fadeSlideUp 0.6s ease both;
-}
-
-.hero-profile-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.hero-name-img {
+  width: clamp(48px, 7vw, 72px);
+  height: clamp(48px, 7vw, 72px);
+  border-radius: 18%;
   object-fit: cover;
   border: 2px solid var(--border-accent);
-  box-shadow:
-    0 0 32px var(--accent-glow),
-    0 8px 24px rgba(0, 0, 0, 0.4);
-  display: block;
+  box-shadow: 0 0 24px var(--accent-glow);
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 0.4rem;
   transition: var(--transition);
+  animation: heroImgIn 0.7s 0.2s ease both;
 }
 
-@media (max-width: 768px) {
-  .hero-profile-img {
-    width: 100px;
-    height: 100px;
+.hero-name-img:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 0 36px rgba(107, 168, 232, 0.35);
+}
+
+@keyframes heroImgIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotate(-10deg);
   }
-}
-
-@media (max-width: 480px) {
-  .hero-profile-img {
-    width: 88px;
-    height: 88px;
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
   }
 }
