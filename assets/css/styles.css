@@ -187,7 +187,11 @@ body::before {
   position: absolute;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(107, 168, 232, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(107, 168, 232, 0.08) 0%,
+    transparent 70%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -245,8 +249,6 @@ body::before {
   justify-content: center;
   animation: fadeSlideUp 0.6s 0.4s ease both;
 }
-
-
 
 /*  BUTTONS  */
 .btn {
@@ -376,7 +378,11 @@ body::before {
 .project-img-placeholder {
   width: 100%;
   aspect-ratio: 16/9;
-  background: linear-gradient(135deg, rgba(107, 168, 232, 0.04) 0%, rgba(20, 33, 61, 0.08) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(107, 168, 232, 0.04) 0%,
+    rgba(20, 33, 61, 0.08) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -471,10 +477,12 @@ body::before {
 }
 .about-avatar {
   width: 100%;
-  aspect-ratio: 1;
-  border-radius: var(--radius-lg);
+  aspect-ratio: 0.89; /* matches the shape's proportions */
+  clip-path: url(#blobClip);
+  -webkit-clip-path: url(#blobClip);
+  border-radius: 0; /* remove — the path defines the outline now */
+  border: none; /* optional: shape has its own silhouette */
   background: linear-gradient(135deg, #141e33 0%, #0f1729 100%);
-  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -658,7 +666,12 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-light),
+    transparent
+  );
   opacity: 0.4;
 }
 .contact-form-card h2 {
@@ -861,7 +874,8 @@ body::before {
   }
 }
 @keyframes buzz {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(0deg);
   }
   10% {

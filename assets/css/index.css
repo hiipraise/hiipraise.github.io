@@ -1,10 +1,12 @@
 .hero-name-img {
-  width: clamp(48px, 7vw, 72px);
   height: clamp(48px, 7vw, 72px);
-  border-radius: 18%;
+  aspect-ratio: 0.89; /* matches the shape's proportions — replaces the square width/height */
+  clip-path: url(#blobClip);
+  -webkit-clip-path: url(#blobClip);
   object-fit: cover;
-  border: 2px solid var(--border-accent);
-  box-shadow: 0 0 24px var(--accent-glow);
+  filter: drop-shadow(
+    0 0 12px var(--accent-glow)
+  ); /* replaces box-shadow — follows the clipped shape instead of the rectangle */
   vertical-align: middle;
   display: inline-block;
   margin: 0 0.4rem;
@@ -14,7 +16,7 @@
 
 .hero-name-img:hover {
   transform: scale(1.08) rotate(-2deg);
-  box-shadow: 0 0 36px rgba(107, 168, 232, 0.35);
+  filter: drop-shadow(0 0 20px rgba(107, 168, 232, 0.35));
 }
 
 @keyframes heroImgIn {
