@@ -69,17 +69,16 @@
           <div class="proj-content">
             <div class="proj-number">PROJECT 01 · REACT / JS</div>
             <h2>PCL Construction Clone</h2>
-            <p>A faithful recreation of the PCL Construction corporate homepage, built from scratch using pure React,
-              and
-              vanilla JavaScript. Demonstrates mastery of web fundamentals without any framework.</p>
+            <p>A pixel-perfect recreation of the PCL Construction corporate homepage, built with React and TailwindCSS.
+              Focused on responsive layout, scroll interactions, and cross-browser consistency.</p>
             <ul>
-              <li>Responsive multi-column layout with TailwindCSS</li>
-              <li>Sticky navigation with scroll-triggered behavior</li>
-              <li>Animated hero and section transitions</li>
-              <li>Cross-browser compatible CSS with custom properties</li>
+              <li>Responsive multi-column layout across all breakpoints</li>
+              <li>Sticky navigation with scroll-triggered show/hide behavior</li>
+              <li>Animated hero section and smooth page transitions</li>
+              <li>Cross-browser CSS with custom properties and fallbacks</li>
             </ul>
             <div class="project-tags" style="margin-bottom:1.25rem;">
-              <span class="tag">REACT</span><span class="tag">JavaScript</span><span class="tag">Responsive</span>
+              <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Tailwind CSS</span>
             </div>
             <div class="proj-links-row">
               <a href="https://github.com/hiipraise" class="btn btn-secondary" target="_blank" rel="noopener">
@@ -97,16 +96,15 @@
           <div class="proj-content">
             <div class="proj-number">PROJECT 02 · FULL-STACK AI SAAS</div>
             <h2>AXIOM - AI Career Platform</h2>
-            <p>A production-grade, AI-powered career workspace with a React/TypeScript + Vite frontend and a
-              FastAPI/Python + MongoDB backend. Integrates Groq-hosted LLaMA models for CV scoring, job matching, and
-              interview prep.</p>
+            <p>A full-stack, AI-powered career workspace with a React/TypeScript frontend and a FastAPI/Python backend.
+              Uses Groq-hosted LLaMA models for intelligent CV scoring, job matching, and interview preparation.</p>
             <ul>
-              <li>AI CV editor with ATS section detection and scoring</li>
+              <li>AI CV editor with ATS-compatible section detection and scoring</li>
               <li>Job board with Africa/Nigeria filtering and one-click apply</li>
-              <li>Interview prep with STAR framework and AI feedback</li>
-              <li>Dashboard with application metrics and analytics</li>
-              <li>JWT auth, rate limiting, audit logging, and secure API design</li>
-              <li>Fully responsive - mobile-first with bottom sheet patterns</li>
+              <li>STAR-framework interview prep with real-time AI feedback</li>
+              <li>Dashboard with application metrics, analytics, and history</li>
+              <li>Secure auth, rate limiting, and audit logging on all endpoints</li>
+              <li>Mobile-first responsive design with bottom sheet patterns</li>
             </ul>
             <div class="project-tags" style="margin-bottom:1.25rem;">
               <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span>
@@ -131,16 +129,15 @@
           <div class="proj-content">
             <div class="proj-number">PROJECT 03 · NEXT.JS · MOTION</div>
             <h2>Pinnacle Aerospace</h2>
-            <p>A production-ready aerospace corporate website built with Next.js 15 app router, TailwindCSS, and Framer
-              Motion. Features fluid scroll animations, orchestrated entrance sequences, and premium visual language.
-            </p>
+            <p>A premium aerospace corporate website built with Next.js 15, TailwindCSS, and Framer Motion. Designed for
+              polished scroll animations, orchestrated entrance sequences, and a clean visual identity.</p>
             <ul>
-              <li>Next.js 15 App Router with TypeScript and server components</li>
-              <li>Framer Motion scroll-triggered animations and exit transitions</li>
-              <li>TailwindCSS design system with custom tokens</li>
-              <li>Performance-optimized images and lazy-loaded sections</li>
-              <li>Fully responsive with mobile-first breakpoints</li>
-              <li>SEO-ready metadata and semantic HTML structure</li>
+              <li>Next.js 15 App Router with server components and TypeScript</li>
+              <li>Framer Motion scroll-triggered animations and page transitions</li>
+              <li>TailwindCSS design system with custom design tokens</li>
+              <li>Optimized images and lazy-loaded sections for fast page loads</li>
+              <li>Mobile-first responsive layout with fluid typography</li>
+              <li>SEO-ready metadata, Open Graph tags, and semantic markup</li>
             </ul>
             <div class="project-tags" style="margin-bottom:1.25rem;">
               <span class="tag">Next.js 15</span><span class="tag">TypeScript</span>
@@ -154,120 +151,55 @@
           </div>
         </article>
 
-        <!-- More projects -->
+        <!-- More projects — Curved Carousel -->
         <div class="reveal" style="margin-top:3rem;">
           <div class="section-tag">More Work</div>
           <h2 class="section-title" style="font-size:1.5rem;margin-bottom:2rem;">Other Notable Builds</h2>
-          <div class="projects-grid">
 
-            <article class="project-card" aria-label="Primer project">
-              <div class="project-img-placeholder"><i data-lucide="lightbulb"></i></div>
-              <div class="project-body">
-                <h3 class="project-name">Primer</h3>
-                <p class="project-desc">Product that turns raw ideas into execution-ready blueprints.
-                  Built the interface for structuring ideas into organized plans, requirements, and execution steps.</p>
-                <div class="project-tags">
-                  <span class="tag">Next.js</span><span class="tag">Supabase</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
-                    <i data-lucide="github"></i> GitHub
-                  </a>
+          <div class="carousel-wrapper" id="project-carousel">
+            <div class="carousel-track" id="carousel-track">
+              <div class="carousel-item" data-index="0">
+                <div class="carousel-card" role="button" tabindex="0" aria-label="Select Primer project">
+                  <i data-lucide="lightbulb" class="carousel-icon"></i>
+                  <span class="carousel-label">Primer</span>
                 </div>
               </div>
-            </article>
-
-            <article class="project-card" aria-label="Soro project">
-              <div class="project-img-placeholder"><i data-lucide="heart"></i></div>
-              <div class="project-body">
-                <h3 class="project-name">Soro</h3>
-                <p class="project-desc">Private, anonymous platform for emotional processing, progress
-                  tracking, and financial planning. Built the frontend and core user interfaces and delivered the PWA
-                  experience.</p>
-                <div class="project-tags">
-                  <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Python</span><span
-                    class="tag">PWA</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
-                    <i data-lucide="github"></i> GitHub
-                  </a>
+              <div class="carousel-item" data-index="1">
+                <div class="carousel-card" role="button" tabindex="0" aria-label="Select Soro project">
+                  <i data-lucide="heart" class="carousel-icon"></i>
+                  <span class="carousel-label">Soro</span>
                 </div>
               </div>
-            </article>
-
-            <article class="project-card" aria-label="AutoDoc AI project">
-              <div class="project-img-placeholder"><i data-lucide="file-text"></i></div>
-              <div class="project-body">
-                <h3 class="project-name">AutoDoc AI</h3>
-                <p class="project-desc">Developer tool that automatically documents codebases.
-                  Built tooling and workflows for analyzing codebases and generating technical documentation.</p>
-                <div class="project-tags">
-                  <span class="tag">CLI</span><span class="tag">AI</span><span class="tag">TypeScript</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
-                    <i data-lucide="github"></i> GitHub
-                  </a>
+              <div class="carousel-item" data-index="2">
+                <div class="carousel-card" role="button" tabindex="0" aria-label="Select AutoDoc AI project">
+                  <i data-lucide="file-text" class="carousel-icon"></i>
+                  <span class="carousel-label">AutoDoc AI</span>
                 </div>
               </div>
-            </article>
-
-            <article class="project-card" aria-label="Wellbeing project">
-              <div class="project-img-placeholder"><i data-lucide="leaf"></i></div>
-              <div class="project-body">
-                <h3 class="project-name">Wellbeing</h3>
-                <p class="project-desc">Marketing website for a cleaning, fumigation, and weed-control business.
-                  Built service-focused pages with calls to action across desktop and mobile.</p>
-                <div class="project-tags">
-                  <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Vite</span><span
-                    class="tag">Tailwind CSS</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
-                    <i data-lucide="github"></i> GitHub
-                  </a>
+              <div class="carousel-item" data-index="3">
+                <div class="carousel-card" role="button" tabindex="0" aria-label="Select Wellbeing project">
+                  <i data-lucide="leaf" class="carousel-icon"></i>
+                  <span class="carousel-label">Wellbeing</span>
                 </div>
               </div>
-            </article>
-
-            <article class="project-card" aria-label="Sentinel project">
-              <div class="project-img-placeholder"><i data-lucide="shield"></i></div>
-              <div class="project-body">
-                <h3 class="project-name">Sentinel</h3>
-                <p class="project-desc">Enterprise-grade Emergency Response Mapping Dashboard - real-time crisis
-                  coordination with Zustand, Recharts analytics, and Lenis smooth scroll.</p>
-                <div class="project-tags">
-                  <span class="tag">React</span><span class="tag">Zustand</span><span class="tag">Recharts</span><span
-                    class="tag">TailwindCSS</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
-                    <i data-lucide="github"></i> GitHub
-                  </a>
+              <div class="carousel-item" data-index="4">
+                <div class="carousel-card" role="button" tabindex="0" aria-label="Select Sentinel project">
+                  <i data-lucide="shield" class="carousel-icon"></i>
+                  <span class="carousel-label">Sentinel</span>
                 </div>
               </div>
-            </article>
-
-            <article class="project-card" aria-label="Simulyn project">
-              <div class="project-img-placeholder"><i data-lucide="bot"></i></div>
-              <div class="project-body">
-                <h3 class="project-name">Simulyn</h3>
-                <p class="project-desc">A futuristic AI workspace operating system for career simulation and
-                  professional training - built with Lenis, Zustand, React, and TailwindCSS.</p>
-                <div class="project-tags">
-                  <span class="tag">React</span><span class="tag">Lenis</span><span class="tag">Zustand</span><span
-                    class="tag">TailwindCSS</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/hiipraise" class="project-link" target="_blank" rel="noopener">
-                    <i data-lucide="github"></i> GitHub
-                  </a>
+              <div class="carousel-item" data-index="5">
+                <div class="carousel-card" role="button" tabindex="0" aria-label="Select Simulyn project">
+                  <i data-lucide="bot" class="carousel-icon"></i>
+                  <span class="carousel-label">Simulyn</span>
                 </div>
               </div>
-            </article>
+            </div>
 
           </div>
+
+          <!-- Dynamic details panel -->
+          <div class="carousel-details" id="carousel-details"></div>
         </div>
 
       </div>

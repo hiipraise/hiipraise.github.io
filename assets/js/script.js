@@ -383,3 +383,231 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
+
+//  CURVED RADIAL CAROUSEL
+(function initCarousel() {
+  const wrapper = document.getElementById("project-carousel");
+  if (!wrapper) return;
+
+  const track = document.getElementById("carousel-track");
+  const detailsPanel = document.getElementById("carousel-details");
+  const items = Array.from(track.querySelectorAll(".carousel-item"));
+  const count = items.length;
+
+  const projects = [
+    {
+      name: "Primer",
+      desc: "Product that turns raw ideas into execution-ready blueprints. Built the interface for structuring ideas into organized plans, requirements, and execution steps.",
+      tags: ["Next.js", "Supabase"],
+      link: "https://github.com/hiipraise",
+    },
+    {
+      name: "Soro",
+      desc: "Private, anonymous platform for emotional processing, progress tracking, and financial planning. Built the frontend, core user interfaces, and delivered the PWA experience.",
+      tags: ["React", "TypeScript", "Python", "PWA"],
+      link: "https://github.com/hiipraise",
+    },
+    {
+      name: "AutoDoc AI",
+      desc: "Developer tool that automatically documents codebases. Built tooling and workflows for analyzing codebases and generating technical documentation.",
+      tags: ["CLI", "AI", "TypeScript"],
+      link: "https://github.com/hiipraise",
+    },
+    {
+      name: "Wellbeing",
+      desc: "Marketing website for a cleaning, fumigation, and weed-control business. Built service-focused pages with calls to action across desktop and mobile.",
+      tags: ["React", "JavaScript", "Vite", "Tailwind CSS"],
+      link: "https://github.com/hiipraise",
+    },
+    {
+      name: "Sentinel",
+      desc: "Enterprise-grade Emergency Response Mapping Dashboard. Real-time crisis coordination with Zustand state management, Recharts analytics, and Lenis smooth scroll.",
+      tags: ["React", "Zustand", "Recharts", "TailwindCSS"],
+      link: "https://github.com/hiipraise",
+    },
+    {
+      name: "Simulyn",
+      desc: "A futuristic AI workspace operating system for career simulation and professional training. Built with Lenis, Zustand, React, and TailwindCSS.",
+      tags: ["React", "Lenis", "Zustand", "TailwindCSS"],
+      link: "https://github.com/hiipraise",
+    },
+  ];
+
+  const STEP = 30; // degrees between neighbouring items on the arch
+  const VISIBLE = 2; // items shown on each side of the centre
+  const MAX_R = 340; // max arch radius (px)
+
+  const rad = (deg) => (deg * Math.PI) / 180;
+  const angleOf = (d) =>
+    Math.sign(d) * Math.min(Math.abs(d) * STEP, VISIBLE * STEP + 14);
+  const scaleOf = (d) => (d === 0 ? 1.15 : Math.max(0.8, 1 - Math.abs(d) * 0.08));
+  const opacityOf = (d) =>
+    Math.abs(d) > VISIBLE ? 0 : d === 0 ? 1 : 1 - Math.abs(d) * 0.3;
+
+  let activeIndex = 0;
+  let autoTimer = null;
+  let paused = false;
+  let geo = null;
+  const slots = new Array(count);
+
+  function slotFor(i, prev) {
+    let d = (((i - activeIndex) % count) + count) % count;
+    if (d > count / 2) d -= count;
+    if (count % 2 === 0 && d === count / 2 && prev < 0) d = -d;
+    return d;
+  }
+
+  function measure() {
+    const W = wrapper.clientWidth;
+    const w = items[0].offsetWidth;
+    const h = items[0].offsetHeight;
+    const R = Math.min(
+      MAX_R,
+      (W / 2 - 4 - (w * scaleOf(VISIBLE)) / 2) / Math.sin(rad(VISIBLE * STEP)),
+    );
+    const pad = h * 0.08;
+    const drop = (d) => (1 - Math.cos(rad(angleOf(d)))) * R;
+    const bottom = (d) => pad + drop(d) + (h / 2) * (1 + scaleOf(d));
+
+    const inner =
+      2 * (R * Math.sin(rad(VISIBLE * STEP)) - (w * scaleOf(VISIBLE)) / 2 - 18);
+    const nested = inner >= 300;
+
+    if (nested) {
+      const top = Math.max(bottom(0), bottom(1)) + 14;
+      track.style.height = top + "px";
+      detailsPanel.style.maxWidth = Math.min(inner, 480) + "px";
+      detailsPanel.style.minHeight =
+        Math.max(180, bottom(VISIBLE) - top + 24) + "px";
+      detailsPanel.style.marginTop = "0";
+    } else {
+      track.style.height = bottom(VISIBLE) + 10 + "px";
+      detailsPanel.style.maxWidth = "700px";
+      detailsPanel.style.minHeight = "150px";
+      detailsPanel.style.marginTop = "1rem";
+    }
+
+    geo = { R, pad };
+  }
+
+  function apply(item, d) {
+    const a = rad(angleOf(d));
+    const x = Math.sin(a) * geo.R;
+    const y = geo.pad + (1 - Math.cos(a)) * geo.R;
+    const hidden = Math.abs(d) > VISIBLE;
+
+    item.style.transform = `translate(${x}px, ${y}px) scale(${scaleOf(d)})`;
+    item.style.opacity = opacityOf(d);
+    item.style.zIndex = 10 - Math.abs(d);
+    item.style.pointerEvents = hidden ? "none" : "auto";
+    item.setAttribute("aria-hidden", hidden);
+    item.querySelector(".carousel-card").tabIndex = hidden ? -1 : 0;
+    item.classList.toggle("is-active", d === 0);
+  }
+
+  function layout(instant = false) {
+    measure();
+    items.forEach((item, i) => {
+      const prev = slots[i];
+      const d = slotFor(i, prev === undefined ? 0 : prev);
+      const jumped =
+        prev !== undefined && Math.abs(d - prev) > VISIBLE + 1;
+
+      if (instant || jumped) {
+        item.style.transition = "none";
+        apply(item, jumped ? (d < 0 ? -1 : 1) * (VISIBLE + 1) : d);
+        void item.offsetWidth;
+        item.style.transition = "";
+      }
+      apply(item, d);
+      slots[i] = d;
+    });
+  }
+
+  function updateDetails() {
+    const p = projects[activeIndex];
+    const tagsHTML = p.tags
+      .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
+      .join("");
+
+    detailsPanel.innerHTML = `
+      <div class="detail-inner">
+        <h3>${escapeHtml(p.name)}</h3>
+        <p class="detail-desc">${escapeHtml(p.desc)}</p>
+        <div class="detail-tags">${tagsHTML}</div>
+        <a href="${escapeHtml(p.link)}" class="detail-link" target="_blank" rel="noopener">
+          <i data-lucide="github"></i> View on GitHub
+        </a>
+      </div>
+    `;
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function setActive(index) {
+    activeIndex = ((index % count) + count) % count;
+    layout();
+    updateDetails();
+  }
+
+  // Click / keyboard selection
+  items.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      setActive(i);
+      resetAuto();
+    });
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setActive(i);
+        resetAuto();
+      }
+    });
+  });
+
+  // Auto-rotation
+  function startAuto() {
+    autoTimer = setInterval(() => {
+      if (!paused) setActive(activeIndex + 1);
+    }, 4000);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  // Pause on hover (carousel and details panel)
+  [wrapper, detailsPanel].forEach((el) => {
+    el.addEventListener("mouseenter", () => (paused = true));
+    el.addEventListener("mouseleave", () => (paused = false));
+  });
+
+  // Touch swipe support
+  let touchStartX = 0;
+  wrapper.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.touches[0].clientX;
+      paused = true;
+    },
+    { passive: true },
+  );
+  wrapper.addEventListener(
+    "touchend",
+    (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) setActive(activeIndex + (dx < 0 ? 1 : -1));
+      paused = false;
+      resetAuto();
+    },
+    { passive: true },
+  );
+
+  window.addEventListener("resize", () => layout(true));
+
+  // Init
+  layout(true);
+  updateDetails();
+  startAuto();
+})();
+

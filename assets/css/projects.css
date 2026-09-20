@@ -113,7 +113,7 @@
   font-size: 0.85rem;
   color: var(--text-secondary);
   padding: 0.3rem 0;
-  padding-left: 1.25rem;
+  padding-left: 0.85rem;
   position: relative;
 }
 
@@ -122,7 +122,8 @@
   position: absolute;
   left: 0;
   color: var(--accent-light);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  top: 0.35rem;
 }
 
 .proj-links-row {
@@ -180,6 +181,152 @@
 }
 
 /* ============================
+   CURVED RADIAL CAROUSEL
+   ============================ */
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.carousel-track {
+  position: relative;
+  height: 300px; /* JS sets the real height to fit the arch */
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 110px;
+  height: 140px;
+  margin-left: -55px;
+  transition:
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  will-change: transform, opacity;
+  text-align: center;
+}
+
+.carousel-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.carousel-item.is-active .carousel-card {
+  border-color: var(--border-accent);
+}
+
+.carousel-icon {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent-light);
+  transition: var(--transition);
+}
+
+.carousel-item.is-active .carousel-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.carousel-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.carousel-item.is-active .carousel-label {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+/* ── Details Panel (centred under the arch) ── */
+.carousel-details {
+  position: relative;
+  z-index: 1;
+  max-width: 700px; /* JS narrows this to fit under the arch */
+  margin: 0 auto;
+  padding: 0.5rem 0 2rem;
+  min-height: 180px;
+  text-align: center;
+}
+
+.carousel-details .detail-inner {
+  animation: fadeSlideUp 0.4s ease both;
+}
+
+.carousel-details h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.carousel-details .detail-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.carousel-details .detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-details .tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: rgba(91, 155, 213, 0.08);
+  border: 1px solid rgba(91, 155, 213, 0.15);
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.carousel-details .tag:hover {
+  background: rgba(91, 155, 213, 0.15);
+  color: var(--text-primary);
+}
+
+.carousel-details .detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--accent-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.carousel-details .detail-link:hover {
+  color: var(--text-primary);
+}
+
+/* ============================
    RESPONSIVE
    ============================ */
 
@@ -200,5 +347,43 @@
 
   .proj-content h2 {
     font-size: 1.25rem;
+  }
+
+  .carousel-track {
+    height: 180px;
+  }
+
+  .carousel-item {
+    width: 72px;
+    height: 96px;
+    margin-left: -36px;
+  }
+
+  .carousel-card {
+    padding: 0.4rem;
+    gap: 0.35rem;
+  }
+
+  .carousel-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .carousel-item.is-active .carousel-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .carousel-label {
+    font-size: 0.62rem;
+  }
+
+  .carousel-item.is-active .carousel-label {
+    font-size: 0.7rem;
+  }
+
+  .carousel-details {
+    padding: 0.5rem 0.5rem 1.5rem;
+    min-height: 150px;
   }
 }

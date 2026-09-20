@@ -784,36 +784,6 @@ body::before {
   }
 }
 
-/*  MULTIMEDIA  */
-.media-section {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  margin-top: 2rem;
-  text-align: left;
-}
-.media-section-header {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.5rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-.media-section-header [data-lucide] {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent-light);
-}
-.media-embed {
-  width: 100%;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  aspect-ratio: 16/9;
-  display: block;
-}
 
 /*  FOOTER  */
 .footer {
